@@ -10,7 +10,7 @@ from calculator import Calculator
 class TestCalculator:
     def setup_class(self):
         self.cal = Calculator()
-        print("计算开始")
+        print("计算开始!")
 
     # #def setup(self):
     #     self.cal = Calculator()
@@ -37,7 +37,7 @@ class TestCalculator:
     def test_add(self, a, b, expect):
         re = self.cal.add(a, b)
         try:
-            assert re == expect  ##异常来自try
+            assert re == expect  # 异常来自try
         except AssertionError as e:
             print("输入参数错误请修改")
             print(e)
