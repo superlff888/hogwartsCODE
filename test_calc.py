@@ -4,7 +4,7 @@
 #  -*-  utf-8  -*-
 import pytest
 
-from homework_hogwarts.calculator import Calculator
+from calculator import Calculator
 
 
 class TestCalculator:
