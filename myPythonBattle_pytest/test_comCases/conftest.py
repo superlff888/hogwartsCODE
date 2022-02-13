@@ -2,6 +2,12 @@
 # @Author    : ╰☆H.俠ゞ
 # -*-coding=utf-8-*-
 # =============================================================
+
+"""
+conftest文件必须放在包中（包含init.py文件）
+"""
+
+
 def pytest_collection_modifyitems(items):
     """
     测试用例收集完成时，将收集到的item的name和nodeid的中文显示

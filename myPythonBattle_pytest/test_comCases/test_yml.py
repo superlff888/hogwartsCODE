@@ -9,7 +9,7 @@ yaml数据驱动
 import pytest
 import yaml
 
-from Lesson_22.python编程语言与框架.myPythonBattle_pytest_实战.com.calc import Calc
+from myPythonBattle_pytest.com.calc import Calc
 
 
 def get_data(pattern, level):
