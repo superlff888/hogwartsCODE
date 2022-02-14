@@ -6,6 +6,8 @@
 """
 yaml数据驱动
 """
+import json
+
 import pytest
 import yaml
 
@@ -16,7 +18,7 @@ def get_data(pattern, level):
     with open("../data/calc.yml", encoding='UTF-8') as f:  # 编码格式，解决中文乱码
         result = yaml.safe_load(f)
     print(f'\n{type(result)}')
-    # result_json = json.dumps(result, ensure_ascii=False, indent=5)  # 调用json模块中的dumps()方法，设置编码格式和缩进方式，然后赋值给变量e
+    # result_json = json.dumps(result, ensure_ascii=False, indent=5)  # 调用json模块中的dumps()方法，设置编码格式和缩进方式
     # print(f'转化为json为 :\n\t{result_json}')
     # print(f'\n{result}')
     # print(f'从yaml文件中读取加法数据：{result.get("add").get("P0").get("datas")}')
