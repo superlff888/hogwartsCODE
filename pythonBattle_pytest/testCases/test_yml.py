@@ -28,7 +28,7 @@ class TestCalcYaml:
     def test_yml_0(self, a, b, exc_a):
         result_a = self.calc.add(a, b)
         assert result_a == exc_a
-        pytest.assume(1 + 5 == 7)
+        # pytest.assume(1 + 5 == 7)
 
     @pytest.mark.parametrize('a, b ,exc_a', add_p1_data, ids=add_p1_ids)
     def test_yml_1(self, a, b, exc_a):
