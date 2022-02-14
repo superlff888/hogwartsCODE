@@ -6,11 +6,7 @@
 """
 yaml数据驱动
 """
-import json
-
 import pytest
-import yaml
-
 from pythonBattle_pytest.common.getData import get_data
 from pythonBattle_pytest.src.calc import Calc
 
