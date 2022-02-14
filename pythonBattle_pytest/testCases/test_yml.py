@@ -12,13 +12,13 @@ from pythonBattle_pytest.src.calc import Calc
 
 
 def test_out():
-    print(get_data("add", "P1"))
+    print(get_data("../data/calc.yml", "add", "P1"))
 
 
 class TestCalcYaml:
     # 将yaml文件中获取的数据放在类变量中
-    add_p0_data, add_p0_ids = get_data("add", "P1")  # 解包
-    add_p1_data, add_p1_ids = get_data("add", "P1")  # 解包
+    add_p0_data, add_p0_ids = get_data("../data/calc.yml", "add", "P1")  # 解包
+    add_p1_data, add_p1_ids = get_data("../data/calc.yml", "add", "P1")  # 解包
 
     def setup(self):
         self.calc = Calc()

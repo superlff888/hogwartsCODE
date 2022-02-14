@@ -5,8 +5,8 @@
 import yaml
 
 
-def get_data(pattern, level):
-    with open("../data/calc.yml", encoding='UTF-8') as f:  # 编码格式，解决中文乱码
+def get_data(filepath, pattern, level):
+    with open(filepath, encoding='UTF-8') as f:  # 编码格式，解决中文乱码
         result = yaml.safe_load(f)
     print(f'\n{type(result)}')
     # result_json = json.dumps(result, ensure_ascii=False, indent=5)  # 调用json模块中的dumps()方法，设置编码格式和缩进方式
