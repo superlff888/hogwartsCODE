@@ -18,4 +18,3 @@ def get_data(filepath, pattern, level):
     return result.get(pattern).get(level).get("datas"), result.get(pattern).get(level).get("ids")  # 调用该函数，获取元组
     # # return [result.get(pattern).get(level).get("datas"), result.get("add").get("P0").get("ids")]  # 自定义返回列表
 
-# print(get_data("../data/calc.yml", 'add', 'P0'))
