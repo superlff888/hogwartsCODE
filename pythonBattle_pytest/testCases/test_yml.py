@@ -9,11 +9,11 @@ yaml数据驱动
 import pytest
 import yaml
 
-from myPythonBattle_pytest.com.calc import Calc
+from pythonBattle_pytest.src.calc import Calc
 
 
 def get_data(pattern, level):
-    with open("calc.yml", encoding='UTF-8') as f:  # 编码格式，解决中文乱码
+    with open("../data/calc.yml", encoding='UTF-8') as f:  # 编码格式，解决中文乱码
         result = yaml.safe_load(f)
     print(f'\n{type(result)}')
     # result_json = json.dumps(result, ensure_ascii=False, indent=5)  # 调用json模块中的dumps()方法，设置编码格式和缩进方式，然后赋值给变量e

@@ -2,8 +2,9 @@
 # @Author    : ╰☆H.俠ゞ
 # -*-coding=utf-8-*-
 # =============================================================
-from Lesson_22.python编程语言与框架.myPythonBattle_pytest_实战.com.calc import Calc
 import pytest
+
+from pythonBattle_pytest.src.calc import Calc
 
 
 class TestCalc:
