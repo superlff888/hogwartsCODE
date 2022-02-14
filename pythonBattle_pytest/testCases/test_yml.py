@@ -11,20 +11,8 @@ import json
 import pytest
 import yaml
 
+from pythonBattle_pytest.common.getData import get_data
 from pythonBattle_pytest.src.calc import Calc
-
-
-def get_data(pattern, level):
-    with open("../data/calc.yml", encoding='UTF-8') as f:  # 编码格式，解决中文乱码
-        result = yaml.safe_load(f)
-    print(f'\n{type(result)}')
-    # result_json = json.dumps(result, ensure_ascii=False, indent=5)  # 调用json模块中的dumps()方法，设置编码格式和缩进方式
-    # print(f'转化为json为 :\n\t{result_json}')
-    # print(f'\n{result}')
-    # print(f'从yaml文件中读取加法数据：{result.get("add").get("P0").get("datas")}')
-
-    return result.get(pattern).get(level).get("datas"), result.get("add").get("P0").get("ids")  # 调用该函数，获取元组
-    # return [result.get(pattern).get(level).get("datas"), result.get("add").get("P0").get("ids")]  # 自定义返回列表
 
 
 def test_out():
