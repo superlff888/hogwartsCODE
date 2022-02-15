@@ -8,7 +8,7 @@
     防止测试用例标题ids中文两乱码
 【注意】
     1、conftest文件必须放在包中（包含init.py文件）
-    2、所有同级目录运行前都会先执行conftest.py文件，作用域为当前目录及以下
+    2、所有同级目录运行前都会先执行conftest.py文件，作用域为当前目录
 """
 import os
 from datetime import datetime
@@ -33,7 +33,7 @@ def pytest_configure(config):
     time_now = datetime.now().strftime('%Y%m%d%H%M%S')
     print(f'\n\n根目录为{config.rootdir}\n\n\n')
     # config.rootdir 配置文件的根目录（根目录为D:\Develop\git_pub_repositories\hogwartsCODE\pythonBattle_pytest）
-    config.option.log_file = os.path.join(config.rootdir, 'testCases/logs', f'{time_now}.log')  # 根目录就最上一级目录吧
+    config.option.log_file = os.path.join(config.rootdir, '../logs', f'{time_now}.log')  # 根目录就最上一级目录吧
 
 
 @pytest.fixture(scope='function')
