@@ -11,6 +11,7 @@ def getLogger_conf(filepath, loggers_key):
     conf_logger = logging.getLogger(loggers_key)  # logging.conf中的key
     return conf_logger
 
-# logger = getLogger_conf('../conf/logging.conf', 'main')
+
+logger = getLogger_conf('../conf/logging.conf', 'main')
 
 # logger.debug('打印日志')

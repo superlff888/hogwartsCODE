@@ -8,6 +8,7 @@ yaml数据驱动
 """
 import pytest
 from pythonBattle_pytest.common.getData import get_data
+from pythonBattle_pytest.common.get_logger_conf import logger
 from pythonBattle_pytest.src.calc import Calc
 
 
@@ -38,9 +39,10 @@ class TestCalcYaml:
 
     @pytest.mark.parametrize('a,b,exc_a', add_p2_data, ids=add_p2_ids)
     def test_yml_2(self, a, b, exc_a):
-        # 捕获with上下文管理器下代码块发生的异常,此处相当于已经做了判断，因为捕获的异常正是"exc_a"
+        # 捕获with上下文管理器下代码块发生的异常,该情况下可以不做断言
         with pytest.raises(eval(
                 exc_a)) as exc_info:  # 应传入一个或一组(数组)异常对象，而不是str(如“TypeError”); pytest.raises((ArithmeticError, ZeroDivisionError, ValueError))
+            logger.debug(f'捕获的异常场景为 {eval(exc_a)}')  # eval(exc_a) == TypeError 对象
             self.calc.add(a, b)
         # print(eval(exc_info.typename))
         # print(exc_info.type)
