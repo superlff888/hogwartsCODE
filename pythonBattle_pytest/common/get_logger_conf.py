@@ -12,4 +12,4 @@ def getLogger_conf(filepath, loggers_key):
     return conf_logger
 
 
-logger = getLogger_conf('../conf/logging.conf', 'main')
+# logger = getLogger_conf('../conf/logging.conf', 'main')
