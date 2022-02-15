@@ -7,7 +7,7 @@
 yaml数据驱动
 """
 import logging
-from pythonBattle_pytest.common.get_logger_conf import logger
+# from pythonBattle_pytest.common.get_logger_conf import logger
 import pytest
 from pythonBattle_pytest.common.getData import get_data
 from pythonBattle_pytest.src.calc import Calc
@@ -44,7 +44,7 @@ class TestCalcYaml:
         with pytest.raises(eval(exc_a)) as exc_info:
             # 应传入一个或一组(数组)异常对象，而不是str(如“TypeError”); pytest.raises((ArithmeticError, ZeroDivisionError, ValueError))
             # 产生该级别日志；会不会收集要看logger收集器的级别,会不会展示到文件和控制器要看各自handler的级别
-            logger.error(f'捕获的异常场景为 {eval(exc_a)}')  # eval(exc_a) == TypeError 对象
+            logging.error(f'捕获的异常场景为 {eval(exc_a)}')  # eval(exc_a) == TypeError 对象
             self.calc.add(a, b)
         # print(eval(exc_info.typename))
         # print(exc_info.type)
