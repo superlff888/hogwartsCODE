@@ -7,7 +7,8 @@
 【该hook函数作用】
     防止测试用例标题ids中文两乱码
 【注意】
-    conftest文件必须放在包中（包含init.py文件）
+    1、conftest文件必须放在包中（包含init.py文件）
+    2、所有同级目录运行前都会先执行conftest.py文件，作用域为当前目录及以下
 """
 import os
 from datetime import datetime
@@ -27,7 +28,7 @@ def pytest_collection_modifyitems(items):
         item._nodeid = item.nodeid.encode("utf-8").decode("unicode_escape")
 
 
-# 动态生成log文件的名称 (可以不在pytest.ini文件中设置日志文件了)
+# 动态生成log文件的名称 (可以将pytest.ini文件中日志保存路径注释掉)
 def pytest_configure(config):
     time_now = datetime.now().strftime('%Y%m%d%H%M%S')
     print(f'\n\n根目录为{config.rootdir}\n\n\n')
