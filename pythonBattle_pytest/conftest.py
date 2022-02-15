@@ -33,7 +33,7 @@ def pytest_configure(config):
     time_now = datetime.now().strftime('%Y%m%d%H%M%S')
     print(f'\n\n根目录为{config.rootdir}\n\n\n')
     # config.rootdir 配置文件的根目录（根目录为D:\Develop\git_pub_repositories\hogwartsCODE\pythonBattle_pytest）
-    config.option.log_file = os.path.join(config.rootdir, 'testCases/logs',
+    config.option.log_file = os.path.join(config.rootdir, 'logs',
                                           f'{time_now}.log')  # 根目录就最上一级目录吧；'testCases/logs'是字符串
 
 
