@@ -27,10 +27,10 @@ def pytest_collection_modifyitems(items):
         item._nodeid = item.nodeid.encode("utf-8").decode("unicode_escape")
 
 
-# # 动态生成log文件的名称 (可以不在pytest.ini文件中设置日志文件了)
+# 动态生成log文件的名称 (可以不在pytest.ini文件中设置日志文件了)
 def pytest_configure(config):
     time_now = datetime.now().strftime('%Y%m%d%H%M%S')
-    config.option.log_file = os.path.join(config.rootdir, '../logs', f'{time_now}.log')
+    config.option.log_file = os.path.join(config.rootdir, './logs', f'{time_now}.log')
 
 
 @pytest.fixture(scope='function')
@@ -44,5 +44,5 @@ def get_calc():
 @pytest.fixture(scope='module', autouse=True)
 def final_over():
     print("测试开始")
-    yield
+    yield '测试中'
     print("测试结束")
