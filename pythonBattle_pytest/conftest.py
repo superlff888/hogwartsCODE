@@ -30,7 +30,9 @@ def pytest_collection_modifyitems(items):
 # 动态生成log文件的名称 (可以不在pytest.ini文件中设置日志文件了)
 def pytest_configure(config):
     time_now = datetime.now().strftime('%Y%m%d%H%M%S')
-    config.option.log_file = os.path.join(config.rootdir, './logs', f'{time_now}.log')
+    print(f'\n\n根目录为{config.rootdir}\n\n\n')
+    # config.rootdir 配置文件的根目录（根目录为D:\Develop\git_pub_repositories\hogwartsCODE\pythonBattle_pytest）
+    config.option.log_file = os.path.join(config.rootdir, 'testCases/logs', f'{time_now}.log')  # 根目录就最上一级目录吧
 
 
 @pytest.fixture(scope='function')
