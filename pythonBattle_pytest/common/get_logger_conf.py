@@ -13,5 +13,3 @@ def getLogger_conf(filepath, loggers_key):
 
 
 logger = getLogger_conf('../conf/logging.conf', 'main')
-
-# logger.debug('打印日志')

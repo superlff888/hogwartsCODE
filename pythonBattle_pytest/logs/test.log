@@ -1,12 +1,1 @@
-2022-02-15 09:41:03,963 [DEBUG] 捕获的异常场景为 <class 'TypeError'> (test_yml.py:45)
-2022-02-15 09:41:03,975 [DEBUG] 捕获的异常场景为 <class 'TypeError'> (test_yml.py:45)
-2022-02-15 09:41:03,986 [DEBUG] 捕获的异常场景为 <class 'TypeError'> (test_yml.py:45)
-2022-02-15 09:41:03,999 [DEBUG] 捕获的异常场景为 <class 'TypeError'> (test_yml.py:45)
-2022-02-15 09:41:04,010 [DEBUG] 捕获的异常场景为 <class 'TypeError'> (test_yml.py:45)
-2022-02-15 09:41:04,023 [DEBUG] 捕获的异常场景为 <class 'TypeError'> (test_yml.py:45)
-2022-02-15 09:49:41,640 [DEBUG] 捕获的异常场景为 <class 'TypeError'> (test_yml.py:45)
-2022-02-15 09:49:41,652 [DEBUG] 捕获的异常场景为 <class 'TypeError'> (test_yml.py:45)
-2022-02-15 09:49:41,663 [DEBUG] 捕获的异常场景为 <class 'TypeError'> (test_yml.py:45)
-2022-02-15 09:49:41,675 [DEBUG] 捕获的异常场景为 <class 'TypeError'> (test_yml.py:45)
-2022-02-15 09:49:41,686 [DEBUG] 捕获的异常场景为 <class 'TypeError'> (test_yml.py:45)
-2022-02-15 09:49:41,701 [DEBUG] 捕获的异常场景为 <class 'TypeError'> (test_yml.py:45)
+
