@@ -32,7 +32,7 @@ class TestCalcYaml:
     @pytest.mark.parametrize('a, b ,exc_a', add_p0_data, ids=add_p0_ids)
     def test_yml_0(self, a, b, exc_a, get_calc):
         # self.calc = get_calc
-        result_a = self.calc.add(a, b)
+        result_a = self.calc.add(a, b)  # 可以直接调用fixture函数get_calc返回的对象
         # assert result_a == exc_a
         pytest.assume(result_a == exc_a)
 
