@@ -10,8 +10,10 @@ import logging
 
 import pytest
 from pythonBattle_pytest.common.getData import get_data
-# from pythonBattle_pytest.common.get_logger_conf import logger
-from pythonBattle_pytest.src.calc import Calc
+from pythonBattle_pytest.common.get_logger_conf import logger
+
+
+# from pythonBattle_pytest.src.calc import Calc
 
 
 class TestCalcYaml:
@@ -24,22 +26,22 @@ class TestCalcYaml:
     add_p2_data, add_p2_ids = get_data(
         r"D:\Develop\git_pub_repositories\hogwartsCODE\pythonBattle_pytest\data\calc.yml", "add", "P2")  # 解包
 
-    def setup(self):
-        self.calc = Calc()
+    # def setup(self):
+    #     self.calc = Calc()
 
     @pytest.mark.run(order=1)
     # 解决ids乱码，不能同时添加conftest.py和pytest.ini,一山不容二虎
     @pytest.mark.parametrize('a, b ,exc_a', add_p0_data, ids=add_p0_ids)
     def test_yml_0(self, a, b, exc_a, get_calc):
-        # self.calc = get_calc
-        result_a = self.calc.add(a, b)  # 可以直接调用fixture函数get_calc返回的对象
+        self.calc = get_calc
+        result_a = self.calc.add(a, b)  # 通过fixture函数获取calc，然后将calc转化为成员变量
         # assert result_a == exc_a
         pytest.assume(result_a == exc_a)
 
     @pytest.mark.run(order=-1)
     @pytest.mark.parametrize('a, b ,exc_a', add_p1_data, ids=add_p1_ids)
     def test_yml_1(self, a, b, exc_a, get_calc):
-        # self.calc = get_calc
+        self.calc = get_calc
         result_a = self.calc.add(a, b)
         pytest.assume(result_a == exc_a)
 
@@ -52,7 +54,7 @@ class TestCalcYaml:
             # pytest.raises((ArithmeticError, ZeroDivisionError, ValueError))
             # 产生该级别日志；会不会收集要看logger收集器的级别,会不会展示到文件和控制器要看各自handler的级别
             logging.debug(f'捕获的异常场景为 {eval(exc_a)}')  # eval(exc_a) == TypeError 对象
-            self.calc = get_calc  # 需要把calc转化为成员变量
+            self.calc = get_calc  # 将获取的calc转化为成员变量
             self.calc.add(a, b)
 
         # print(eval(exc_info.typename))
